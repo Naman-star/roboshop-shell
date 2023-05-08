@@ -31,7 +31,7 @@ func_schema_setup() {
     func_stat_check $?
 
     func_print_head "Load Schema"
-    mongo --host 44.193.26.252 </app/schema/${component}.js &>>$log_file
+    mongo --host 172.31.7.123 </app/schema/${component}.js &>>$log_file
     func_stat_check $?
   fi
   if [ "${schema_setup}" == "mysql" ]; then
@@ -40,7 +40,7 @@ func_schema_setup() {
     func_stat_check $?
 
     func_print_head "Load Schema"
-    mysql -h 3.95.189.155 -uroot -p${mysql_root_password} < /app/schema/shipping.sql &>>$log_file
+    mysql -h 172.31.81.203 -uroot -p${mysql_root_password} < /app/schema/shipping.sql &>>$log_file
     func_stat_check $?
   fi
 }
